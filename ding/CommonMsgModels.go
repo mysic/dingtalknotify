@@ -14,7 +14,7 @@ func (c *CommonMessage) SetConversationId(cid string) *CommonMessage {
 	return c
 }
 
-func (c *CommonMessage) SetMsg (msg interface{}) *CommonMessage {
+func (c *CommonMessage) SetMsg(msg interface{}) *CommonMessage {
 	c.params["msg"] = msg
 	return c
 }
@@ -22,5 +22,3 @@ func (c *CommonMessage) SetMsg (msg interface{}) *CommonMessage {
 func (c *CommonMessage) Make() *map[string]interface{} {
 	return &c.params
 }
-
-

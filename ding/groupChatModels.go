@@ -54,8 +54,6 @@ func (g *CreateGroupMsg) Make() *map[string]interface{} {
 	return &g.params
 }
 
-
-
 // GroupMsg
 type GroupMsg struct {
 	params map[string]interface{}
@@ -75,8 +73,6 @@ func (g *GroupMsg) Make() *map[string]interface{} {
 	return &g.params
 }
 
-
-
 // GroupMsgReadList
 type GroupMsgReadList struct {
 	params map[string]interface{}
@@ -92,8 +88,6 @@ func (g *GroupMsgReadList) SetQueryString(messageId string, cursor, size int) *G
 func (g *GroupMsgReadList) Make() *map[string]interface{} {
 	return &g.params
 }
-
-
 
 // UpdateGroup
 type UpdateGroup struct {
@@ -129,7 +123,6 @@ func (u *UpdateGroup) SetIcon(mediaId string) *UpdateGroup {
 	u.params["icon"] = mediaId
 	return u
 }
-
 
 func (u *UpdateGroup) ShowHistory() *UpdateGroup {
 	u.params["showHistoryType"] = 1
@@ -176,7 +169,7 @@ func (u *UpdateGroup) ChatAllBanned() *UpdateGroup {
 	return u
 }
 
-func (u *UpdateGroup) ChatAllBannedCancel() *UpdateGroup{
+func (u *UpdateGroup) ChatAllBannedCancel() *UpdateGroup {
 	u.params["chatBannedType"] = 0
 	return u
 }
@@ -195,7 +188,6 @@ func (u *UpdateGroup) Make() *map[string]interface{} {
 	return &u.params
 }
 
-
 // GetGroupInfo
 type GetGroupInfo struct {
 	params map[string]interface{}
@@ -209,4 +201,3 @@ func (g *GetGroupInfo) SetChatId(chatId string) *GetGroupInfo {
 func (g *GetGroupInfo) Make() *map[string]interface{} {
 	return &g.params
 }
-

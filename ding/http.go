@@ -13,14 +13,13 @@ const (
 	httpMethodGet  = "GET"
 )
 
-
 type requestHandler struct {
-	scheme string
-	host string
-	path string
-	charset string
+	scheme      string
+	host        string
+	path        string
+	charset     string
 	contentType string
-	method string
+	method      string
 	queryString map[string]interface{}
 }
 
@@ -48,7 +47,7 @@ func (h *requestHandler) _send(url string, method string, payload *[]byte) (r st
 			break
 		}
 
-		req, err := http.NewRequest(method, url,  bytes.NewBuffer(*payload))
+		req, err := http.NewRequest(method, url, bytes.NewBuffer(*payload))
 		if err != nil {
 			break
 		}
@@ -67,7 +66,7 @@ func (h *requestHandler) _send(url string, method string, payload *[]byte) (r st
 			err = errors.New("response body is empty")
 			break
 		}
-		defer  resp.Body.Close()
+		defer resp.Body.Close()
 		res, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			break
@@ -90,14 +89,14 @@ func (h *requestHandler) makeUrl() (theUrl string, err error) {
 			break
 		}
 		v := &url.Values{}
-		for key,value := range h.queryString{
+		for key, value := range h.queryString {
 			v.Add(key, ToString(value))
 		}
 		query := v.Encode()
 		u := &url.URL{
-			Scheme: h.scheme,
-			Host: h.host,
-			Path: h.path,
+			Scheme:   h.scheme,
+			Host:     h.host,
+			Path:     h.path,
 			RawQuery: query,
 		}
 		theUrl = u.String()
@@ -107,18 +106,9 @@ func (h *requestHandler) makeUrl() (theUrl string, err error) {
 	return theUrl, err
 }
 
-
 func (h *requestHandler) setQueryString(queryString *map[string]interface{}) *requestHandler {
 	for key, val := range *queryString {
 		h.queryString[key] = val
 	}
 	return h
 }
-
-
-
-
-
-
-
-

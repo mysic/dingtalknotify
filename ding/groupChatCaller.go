@@ -44,4 +44,3 @@ func (c *Client) GetGroupInfo() *GetGroupInfo {
 	c.requestHandler.method = "get"
 	return ptr
 }
-

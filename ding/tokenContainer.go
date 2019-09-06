@@ -4,7 +4,7 @@ import "time"
 
 type tokenContainer struct {
 	accessToken string
-	expiresIn int64
+	expiresIn   int64
 }
 
 func (t *tokenContainer) SetAccessToken(token string) *tokenContainer {

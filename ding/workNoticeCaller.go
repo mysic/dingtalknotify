@@ -1,6 +1,5 @@
 package ding
 
-
 func (c *Client) WorkNotice() *WorkNotice {
 	ptr := &WorkNotice{
 		make(map[string]interface{}),
@@ -32,4 +31,3 @@ func (c *Client) WorkNoticeRecall() *WorkNoticeRecall {
 	c.requestHandler.path = "topapi/message/corpconversation/recall"
 	return ptr
 }
-

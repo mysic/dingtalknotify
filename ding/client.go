@@ -12,11 +12,11 @@ type Client struct {
 func NewClient(scheme, host string) *Client {
 	client := &Client{}
 	client.requestHandler = &requestHandler{
-		scheme: scheme,
-		host: host,
-		charset: "UTF-8",
+		scheme:      scheme,
+		host:        host,
+		charset:     "UTF-8",
 		contentType: "application/json",
-		queryString:make(map[string]interface{}),
+		queryString: make(map[string]interface{}),
 	}
 	client.TokenContainer = &tokenContainer{}
 	return client
@@ -101,6 +101,3 @@ func (c *Client) Send(requestParams *map[string]interface{}) (resp map[string]in
 	}()
 	return resp, err
 }
-
-
-

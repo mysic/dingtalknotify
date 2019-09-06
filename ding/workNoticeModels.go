@@ -57,7 +57,6 @@ type WorkNoticeResultQuery struct {
 	params map[string]interface{}
 }
 
-
 func (w *WorkNoticeResultQuery) SetAgentId(agentId string) *WorkNoticeResultQuery {
 	w.params["agent_id"] = agentId
 	return w
@@ -76,7 +75,6 @@ type WorkNoticeRecall struct {
 	params map[string]interface{}
 }
 
-
 func (w *WorkNoticeRecall) SetAgentId(agentId string) *WorkNoticeRecall {
 	w.params["agent_id"] = agentId
 	return w
@@ -90,5 +88,3 @@ func (w *WorkNoticeRecall) SetMsgTaskId(taskId string) *WorkNoticeRecall {
 func (w *WorkNoticeRecall) Make() *map[string]interface{} {
 	return &w.params
 }
-
-

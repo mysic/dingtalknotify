@@ -1,6 +1,6 @@
 package ding
 
-func (c *Client) Text() *Text{
+func (c *Client) Text() *Text {
 	ptr := &Text{
 		params: map[string]interface{}{
 			"msgtype": "text",
@@ -9,9 +9,9 @@ func (c *Client) Text() *Text{
 	return ptr
 }
 
-func (c *Client) Image() *Image{
+func (c *Client) Image() *Image {
 	ptr := &Image{
-		params : map[string]interface{}{
+		params: map[string]interface{}{
 			"msgtype": "image",
 		},
 	}
@@ -20,7 +20,7 @@ func (c *Client) Image() *Image{
 
 func (c *Client) Voice() *Voice {
 	ptr := &Voice{
-		params : map[string]interface{}{
+		params: map[string]interface{}{
 			"msgtype": "voice",
 		},
 	}
@@ -29,7 +29,7 @@ func (c *Client) Voice() *Voice {
 
 func (c *Client) File() *File {
 	ptr := &File{
-		params : map[string]interface{}{
+		params: map[string]interface{}{
 			"msgtype": "file",
 		},
 	}
@@ -38,7 +38,7 @@ func (c *Client) File() *File {
 
 func (c *Client) Link() *Link {
 	ptr := &Link{
-		params : map[string]interface{}{
+		params: map[string]interface{}{
 			"msgtype": "link",
 		},
 	}
@@ -47,10 +47,10 @@ func (c *Client) Link() *Link {
 
 func (c *Client) Oa() *Oa {
 	ptr := &Oa{
-		params : map[string]interface{}{
+		params: map[string]interface{}{
 			"msgtype": "oa",
 		},
-		oa: map[string]interface{}{},
+		oa:     map[string]interface{}{},
 		oaBody: map[string]interface{}{},
 	}
 	return ptr
@@ -58,7 +58,7 @@ func (c *Client) Oa() *Oa {
 
 func (c *Client) Markdown() *Markdown {
 	ptr := &Markdown{
-		params : map[string]interface{}{
+		params: map[string]interface{}{
 			"msgtype": "markdown",
 		},
 	}
@@ -67,7 +67,7 @@ func (c *Client) Markdown() *Markdown {
 
 func (c *Client) CardSingleJump() *CardSingleJump {
 	ptr := &CardSingleJump{
-		params : map[string]interface{}{
+		params: map[string]interface{}{
 			"msgtype": "action_card",
 		},
 		inner: map[string]string{},
@@ -77,11 +77,10 @@ func (c *Client) CardSingleJump() *CardSingleJump {
 
 func (c *Client) CardMultiJump() *CardMultiJump {
 	ptr := &CardMultiJump{
-		params : map[string]interface{}{
+		params: map[string]interface{}{
 			"msgtype": "action_card",
 		},
 		inner: map[string]interface{}{},
-
 	}
 	return ptr
 }

@@ -1,6 +1,5 @@
 package ding
 
-
 func (c *Client) CommonMsg() *CommonMessage {
 	ptr := &CommonMessage{
 		make(map[string]interface{}),

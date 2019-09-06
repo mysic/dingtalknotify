@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"dingtalk/ding"
+	"fmt"
 )
 
 func main() {
@@ -24,7 +24,6 @@ func main() {
 	}
 	//将access token及有效期存入结构体中
 	client.TokenContainer.SetExpiresIn(expiresIn).SetAccessToken(accessToken)
-
 
 	/** 发送工作通知消息 */
 
@@ -65,8 +64,6 @@ func main() {
 	//resp, err := client.Send(requestBody)
 	//fmt.Println(resp)
 
-
-
 	//taskId := int64(43616347648)
 	//工作通知消息 撤回
 	//requestBody := client.WorkNoticeRecall().
@@ -84,7 +81,6 @@ func main() {
 	//resp, err := client.Send(body)
 	//fmt.Println(err)
 	//fmt.Println(resp)
-
 
 	////通知结果查询
 	//body := client.WorkNoticeResultQuery().
@@ -148,7 +144,6 @@ func main() {
 	//fmt.Println(resp)
 	//fmt.Println(err)
 
-
 	//修改群会话信息
 	//body := client.UpdateGroup().
 	//	SetChatId(chatId).
@@ -163,7 +158,5 @@ func main() {
 	//resp, err := client.Send(queryString)
 	//fmt.Println(resp)
 	//fmt.Println(err)
-
-
 
 }
