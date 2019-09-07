@@ -9,9 +9,9 @@ func main() {
 
 	host := "oapi.dingtalk.com"
 	scheme := "https"
-	agentid := "278715975"
-	appkey := "dingrfc2mlkfeg1jjxsx"
-	appsecret := "MQkpQypb7sHBtOXC6md3T6GfKl3cM-E6PJU5P2DquS7RpURFdwvU1vZzesCMri3L"
+	agentid := ""
+	appkey := ""
+	appsecret := ""
 	//实例化Client
 	client := ding.NewClient(scheme, host)
 	// 获取access token
