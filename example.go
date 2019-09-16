@@ -54,12 +54,18 @@ func main() {
 
 
 	/****
-	生成HTTP请求体
+	 生成消息发送主体
 	 */
-	// 发送给所有人  3次/天
-	requestBody := client.WorkNotice().SetToAllUser(true).SetAgentId(agentid).SetMsg(msg).Make()
 
-	// 发送给指定用户
+	// 发送类型：工作通知
+	  // 发送给所有人  3次/天
+	requestBody := client.WorkNotice().
+		SetToAllUser(true).
+		SetAgentId(agentid).
+		SetMsg(msg).
+		Make()
+
+	  // 发送给指定用户
 	// user_id 12421853601031587  manager7887
 	// 同一个应用下，同一个用户，相同用户 1次/天 ；
 	// 同一应用，同一用户，发不同的消息，ISV方式50次/天 企业内部方式 500/天
@@ -73,9 +79,35 @@ func main() {
 		Make()
 	 */
 
-	/****
-	发送工作通知
-	*/
+	// 发送类型：普通消息
+	//cid := "14ac70d94e79377b88aa5fc75759fe84" //会话ID
+	//senderId := "manager7887"
+	//requestBody := client.CommonMsg().
+	//	SetMsg(msg).
+	//	SetConversationId(cid).
+	//	SetSender(senderId).
+	//	Make()
+
+	// 发送类型：创建群聊会话
+	//userIdList := &[]string{
+	//	"manager7887",
+	//	"12421853601031587",
+	//}
+	//requestBody := client.CreateGroup().
+	//	SetName("群聊名称").
+	//	SetOwner("manager7887").
+	//	SetUserIdList(userIdList).
+	//	Searchable().
+	//	JoinValidation().
+	//	OneManage().
+	//	DenyMentionAll().
+	//	ShowHistory().
+	//	Make()
+
+
+
+	//发送消息
+	//*/
 	resp, err := client.Send(requestBody)
 	fmt.Println(resp)
 
