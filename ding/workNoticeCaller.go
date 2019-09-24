@@ -5,6 +5,7 @@ func (c *Client) WorkNotice() *WorkNotice {
 		make(map[string]interface{}),
 	}
 	c.requestHandler.path = "topapi/message/corpconversation/asyncsend_v2"
+	c.requestHandler.method = "post"
 	return ptr
 }
 
@@ -13,6 +14,7 @@ func (c *Client) WorkNoticeProgressQuery() *WorkNoticeProgressQuery {
 		make(map[string]interface{}),
 	}
 	c.requestHandler.path = "topapi/message/corpconversation/getsendprogress"
+	c.requestHandler.method = "post"
 	return ptr
 }
 
@@ -21,6 +23,7 @@ func (c *Client) WorkNoticeResultQuery() *WorkNoticeResultQuery {
 		make(map[string]interface{}),
 	}
 	c.requestHandler.path = "topapi/message/corpconversation/getsendresult"
+	c.requestHandler.method = "post"
 	return ptr
 }
 
@@ -29,5 +32,6 @@ func (c *Client) WorkNoticeRecall() *WorkNoticeRecall {
 		make(map[string]interface{}),
 	}
 	c.requestHandler.path = "topapi/message/corpconversation/recall"
+	c.requestHandler.method = "post"
 	return ptr
 }
