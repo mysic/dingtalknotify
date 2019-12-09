@@ -42,8 +42,8 @@ func main() {
 		{"key":"学历：", "value": "本科"},
 	}
 	msg := client.Oa().
-		SetMsgUrl("https://hello.iqxedu.com").
-		SetPcMsgUrl("https://hello.iqxedu.com").
+		SetMsgUrl("https://hello.xxx.com").
+		SetPcMsgUrl("https://hello.xxx.com").
 		SetHead("FF0000", "这里是头部大标题").// 普通回话发送才有效，企业回话会被替换成微应用名称
 		SetBodyContent("这是body123内容").
 		SetBodyAuthor("tony老师").
