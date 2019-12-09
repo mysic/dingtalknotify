@@ -23,7 +23,7 @@ func main() {
 		fmt.Println(errMsg)
 	}
 	//将access token及有效期存入结构体中
-	client.TokenContainer.SetExpiresIn(expiresIn).SetAccessToken(accessToken)
+	client.tokenContainer.SetExpiresIn(expiresIn).SetAccessToken(accessToken)
 
 
 	/****
