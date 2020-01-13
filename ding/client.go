@@ -6,7 +6,7 @@ import (
 
 type Client struct {
 	requestHandler *requestHandler
-	tokenContainer *tokenContainer
+	TokenContainer *tokenContainer
 }
 
 func NewClient(scheme, host string) *Client {
@@ -18,7 +18,7 @@ func NewClient(scheme, host string) *Client {
 		contentType: "application/json",
 		queryString: make(map[string]interface{}),
 	}
-	client.tokenContainer = &tokenContainer{}
+	client.TokenContainer = &tokenContainer{}
 	return client
 }
 
