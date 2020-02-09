@@ -1,7 +1,7 @@
 package main
 
 import (
-	"src/dingtalk/ding"
+	"ding"
 	"fmt"
 )
 
